@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model List<MyMovieSystem.Entity.Plugin>
+<style>
+    table {
+        border: 1px solid #666666;
+    }
+
+        table td {
+            border-left: 1px solid #888;
+            border-bottom: 1px solid #888;
+            padding: 2px 10px;
+        }
+</style>
+<script>
+    function enablePlugin(id, name) {
+        console.log(id);
+
+        $.post("/Plugin/Enable?id=" + id).then(res => {
+            console.log(res);
+            alert(name + "已启用");
+        });
+
+    }
+</script>
+<div>
+    <table>
+        @foreach (var plugin in Model)
+        {
+            <tr>
+                <td>@plugin.Name</td>
+                <td>@plugin.Description</td>
+                <td>@plugin.CreateBy</td>
+                <td>@plugin.CreateTime</td>
+                <td>@plugin.Enabled</td>
+                <td><a onclick="enablePlugin('@plugin.ID','@plugin.Name')" href="javascript:void">启用</a></td>
+            </tr>
+        }
+    </table>
+</div>

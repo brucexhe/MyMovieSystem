@@ -1,0 +1,9 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+@model MyMovieSystem.Entity.Post
+
+<div class="text-center">
+    <h1 class="display-4">@Html.Raw(Model.Title)</h1>
+    <div>@Html.Raw(Model.Content)</div>
+</div>

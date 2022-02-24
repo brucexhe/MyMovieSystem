@@ -1,0 +1,16 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" Version="2.2.8" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\MyMovieSystem.Entity\MyMovieSystem.Entity.csproj" />
+    <ProjectReference Include="..\MyMovieSystem.Plugin\MyMovieSystem.Plugin.csproj" />
+  </ItemGroup>
+
+</Project>
