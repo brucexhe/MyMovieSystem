@@ -26,16 +26,12 @@ namespace MyMovieSystem.Web.Controllers
 
         public IActionResult Index()
         {
-            Post post = new Post();
+            PostViewModel post = new PostViewModel();
             post.ID = 1;
             post.Title = "我是标题";
             post.Content = "<p>我是内容。</p>";
             post.CreateTime = DateTime.Parse("2022-02-22 12:12:11");
-            _titleHook = EngineContext.Current.GetService<ITitleHook>();  
-            if (_titleHook!=null)
-            {
-                post.Title = _titleHook.HookTitle(post.Title);
-            }
+         
             return View(post);
         }
 
