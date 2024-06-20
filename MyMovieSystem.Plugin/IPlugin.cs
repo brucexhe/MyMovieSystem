@@ -4,7 +4,7 @@ namespace MyMovieSystem.Plugin
 {
     public interface IPlugin
     {
-        MyMovieSystem.Entity.Plugin Info { get; }
+        MyMovieSystem.Entity.Entity.Plugin Info { get; }
         void Install();
         void Unistall();
         void Enable();

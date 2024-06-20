@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MyMovieSystem.Entity
+namespace MyMovieSystem.Entity.Entity
 {
     public class Post
     {

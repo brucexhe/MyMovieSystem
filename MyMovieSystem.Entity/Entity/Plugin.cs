@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace MyMovieSystem.Entity
+namespace MyMovieSystem.Entity.Entity
 {
     public class Plugin
     {

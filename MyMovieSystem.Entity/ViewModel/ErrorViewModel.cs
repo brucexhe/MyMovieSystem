@@ -1,6 +1,6 @@
 using System;
 
-namespace MyMovieSystem.Web.Models
+namespace MyMovieSystem.Entity.ViewModel
 {
     public class ErrorViewModel
     {

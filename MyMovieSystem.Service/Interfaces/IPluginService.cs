@@ -8,6 +8,6 @@ namespace MyMovieSystem.Service.Interfaces
 {
     public interface IPluginService
     {
-        Entity.Plugin Install(Entity.Plugin plugin);
+        Entity.Entity.Plugin Install(Entity.Entity.Plugin plugin);
     }
 }

@@ -1,15 +1,17 @@
-﻿using MyMovieSystem.Plugin.Hooks;
+﻿using MyMovieSystem.Entity;
+using MyMovieSystem.Entity.Entity;
+using MyMovieSystem.Plugin.Hooks;
 using System;
 
 namespace MyMovieSystem.Plugin.RedTitle
 {
-    public class RedTitlePlugin : IPlugin, ITitleHook
+    public class RedTitlePlugin : IPlugin, IPostHook
     {
-        public Entity.Plugin Info
+        public Entity.Entity.Plugin Info
         {
             get
             {
-                return new Entity.Plugin()
+                return new Entity.Entity.Plugin()
                 {
                     ID = "MyMovieSystem.Plugin.RedTitle",
                     Name = "RedTitle",
@@ -32,9 +34,11 @@ namespace MyMovieSystem.Plugin.RedTitle
             Info.Enabled = true;
         }
 
-        public string HookTitle(string title)
+        public Post Hook(Post post)
         {
-            return "<span style='color:red'>" + title + "</span>";
+            post.Title =  "<span style='color:red'>" + post.Title + "</span>";
+
+            return post;
         }
 
         public void Install()

@@ -29,7 +29,7 @@ namespace MyMovieSystem.Web
             services.AddControllersWithViews();
             //services.AddScoped<IIocService, MyMovieSystem.Service.IocService>(f => { return new MyMovieSystem.Service.IocService(services.BuildServiceProvider()); });
             services.AddSingleton<IPluginService, PluginService>(f => { return new PluginService(services); });
-
+            services.AddAutoMapper(f=> ());
             EngineContext.Initialize(new MyMovieSystem.Service.Engine(services));
         }
 

@@ -19,7 +19,7 @@ namespace MyMovieSystem.Service
             this.service = _service;
         }
 
-        public Entity.Plugin Install(Entity.Plugin plugin)
+        public Entity.Entity.Plugin Install(Entity.Entity.Plugin plugin)
         {
             var path = AppDomain.CurrentDomain.BaseDirectory + "Plugins//" + plugin.ID + ".dll";
             var assemblyList = new List<Assembly>();
@@ -35,7 +35,7 @@ namespace MyMovieSystem.Service
                 }
                 if (type.GetInterface("ITitleHook") != null && !plugins.Any(f => f.GetType().FullName == type.FullName))
                 {
-                    service.AddSingleton(typeof(ITitleHook), type);
+                    service.AddSingleton(typeof(IPostHook), type);
                 }
 
             }

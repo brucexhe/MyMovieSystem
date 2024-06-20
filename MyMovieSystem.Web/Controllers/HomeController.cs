@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
 using MyMovieSystem.Entity;
+using MyMovieSystem.Entity.Entity;
+using MyMovieSystem.Entity.ViewModel;
 using MyMovieSystem.Plugin;
 using MyMovieSystem.Plugin.Hooks;
 using MyMovieSystem.Service;
@@ -18,7 +20,7 @@ namespace MyMovieSystem.Web.Controllers
     {
         private readonly ILogger<HomeController> _logger;
          
-        private ITitleHook _titleHook;
+        private IPostHook _titleHook;
         public HomeController(ILogger<HomeController> logger )
         {
             _logger = logger; 
@@ -26,13 +28,13 @@ namespace MyMovieSystem.Web.Controllers
 
         public IActionResult Index()
         {
-            PostViewModel post = new PostViewModel();
+            Post  post = new Post();
             post.ID = 1;
             post.Title = "我是标题";
             post.Content = "<p>我是内容。</p>";
             post.CreateTime = DateTime.Parse("2022-02-22 12:12:11");
          
-            return View(post);
+            return View(post.ToViewModel());
         }
 
       
